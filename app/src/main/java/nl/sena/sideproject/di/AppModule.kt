@@ -5,6 +5,8 @@ import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.json.Json
 import nl.sena.sideproject.data.remote.MockInterceptor
 import nl.sena.sideproject.data.remote.api.NumbersService
+import nl.sena.sideproject.data.remote.repository.NumbersRepository
+import nl.sena.sideproject.data.remote.repository.NumbersRepositoryImpl
 import okhttp3.MediaType
 import okhttp3.OkHttpClient
 import org.koin.dsl.module
@@ -15,6 +17,7 @@ val appModule = module {
     factory { provideOkHttpClient(get()) }
     factory { provideNumbersService(get()) }
     single { provideRetrofit(get()) }
+    single<NumbersRepository> { NumbersRepositoryImpl(get()) }
 }
 
 val contentType: MediaType = MediaType.get("application/json")
