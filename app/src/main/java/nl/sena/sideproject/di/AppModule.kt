@@ -7,8 +7,10 @@ import nl.sena.sideproject.data.remote.MockInterceptor
 import nl.sena.sideproject.data.remote.api.NumbersService
 import nl.sena.sideproject.data.remote.repository.NumbersRepository
 import nl.sena.sideproject.data.remote.repository.NumbersRepositoryImpl
+import nl.sena.sideproject.ui.viewmodel.OverviewViewModel
 import okhttp3.MediaType
 import okhttp3.OkHttpClient
+import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 import retrofit2.Retrofit
 
@@ -18,6 +20,7 @@ val appModule = module {
     factory { provideNumbersService(get()) }
     single { provideRetrofit(get()) }
     single<NumbersRepository> { NumbersRepositoryImpl(get()) }
+    viewModel { OverviewViewModel(get()) }
 }
 
 val contentType: MediaType = MediaType.get("application/json")
