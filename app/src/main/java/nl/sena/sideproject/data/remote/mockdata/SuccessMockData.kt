@@ -5,23 +5,23 @@ const val numbersJson = """
       [
          {
              "id": "1",
-             "value": "one"
+             "value": "1"
          },
          {
              "id": "2",
-             "value": "two"
+             "value": "2"
          },
          {
              "id": "3",
-             "value": "three"
+             "value": "3"
          },
          {
              "id": "4",
-             "value": "four"
+             "value": "4"
          },
          {
              "id": "5",
-             "value": "five"
+             "value": "5"
          }
       ]
 }
