@@ -39,6 +39,7 @@ ext {
     viewModelScopeVersion = '2.6.1'
     navigationVersion = '2.5.3'
     fragmentVersion = '1.5.7'
+    lottieVersion = '5.2.0'
     roomVersion = '2.5.1'
     junitVersion = '4.13.2'
     junitExtVersion = '1.1.5'
