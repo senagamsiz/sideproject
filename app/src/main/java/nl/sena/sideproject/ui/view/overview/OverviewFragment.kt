@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import nl.sena.sideproject.data.remote.response.Numbers
 import nl.sena.sideproject.databinding.FragmentOverviewBinding
@@ -78,8 +78,8 @@ class OverviewFragment : Fragment() {
     }
 
     private fun onClick(number: Numbers.Number) {
-        viewBinding.root.findNavController()
-
+        val action = OverviewFragmentDirections.actionOverviewFragmentToDetailFragment(number.value)
+        findNavController().navigate(action)
     }
 
 }
